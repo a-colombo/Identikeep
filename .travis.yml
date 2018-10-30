@@ -52,7 +52,7 @@ before_install:
     - eval "${MATRIX_EVAL}"
 
 script:
-    - ./prepares.sh
+    - ./prepare.sh
     - mkdir build && cd build
     - cmake ..
     - make
