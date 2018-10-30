@@ -9,6 +9,8 @@ matrix:
           packages:
             - g++-4.9
             - cmake
+            - openmpi-bin
+            - libopenmpi-dev
       env:
          - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
 
@@ -21,6 +23,8 @@ matrix:
           packages:
             - g++-5
             - cmake
+            - openmpi-bin
+            - libopenmpi-dev
       env:
          - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
 
@@ -33,6 +37,8 @@ matrix:
           packages:
             - g++-6
             - cmake
+            - openmpi-bin
+            - libopenmpi-dev
       env:
         - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
 
@@ -45,12 +51,13 @@ matrix:
           packages:
             - g++-7
             - cmake
+            - openmpi-bin
+            - libopenmpi-dev
       env:
         - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 
 before_install:
     - eval "${MATRIX_EVAL}"
-    - sudo apt-get install -y -q openmpi-bin libopenmpi-dev
 
 script:
     - ./prepare.sh
