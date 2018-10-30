@@ -50,6 +50,7 @@ matrix:
 
 before_install:
     - eval "${MATRIX_EVAL}"
+    - sudo apt-get install -y -q openmpi-bin libopenmpi-dev
 
 script:
     - ./prepare.sh
